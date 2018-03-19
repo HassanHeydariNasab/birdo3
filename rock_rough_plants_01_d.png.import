@@ -11,14 +11,14 @@ source_file="res://rock_rough_plants_01_d.png"
 source_md5="3b03e67edf673e40c128204109fb7983"
 
 dest_files=[ "res://.import/rock_rough_plants_01_d.png-37427ad144c40b84f53a5a1f89c163b0.s3tc.stex", "res://.import/rock_rough_plants_01_d.png-37427ad144c40b84f53a5a1f89c163b0.etc2.stex" ]
-dest_md5="1feb56c0d101ed567dad0efa488f69f2"
+dest_md5="d27fc25a19f72d448cbf02508d6b8946"
 
 [params]
 
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
-compress/normal_map=1
+compress/normal_map=0
 flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
