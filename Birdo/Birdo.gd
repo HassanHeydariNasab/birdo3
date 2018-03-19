@@ -7,6 +7,8 @@ onready var os = OS.get_name()
 var rapido = Vector3(0,0,0)
 const angula_rapido = 0.03
 
+var t
+
 func _ready():
 	Animo.play("flugi")
 	set_process(true)
@@ -44,7 +46,7 @@ func _physics_process(delta):
 		Birdo.rotate_object_local(Vector3(0,1,0),angula_rapido)
 #		Birdo.rotate_y(angula_rapido)
 	rapido = Vector3(0,0,0)
-	var t = Birdo.get_transform().basis.z.normalized()
+	t = Birdo.get_transform().basis.z.normalized()
 	var x = t.x
 	var y = t.y
 	var z = t.z
@@ -62,4 +64,4 @@ func _physics_process(delta):
 			Birdo.get_global_transform().basis.z.normalized() * 15
 #	Birdo.set_linear_velocity(rapido)
 	Birdo.move_and_collide(rapido/100)
-	Birdo.translate(Vector3(0,-0.03,0))
+	Birdo.move_and_collide(Vector3(0,-0.06,0))
