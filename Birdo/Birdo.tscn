@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Birdo/Birdo.gd" type="Script" id=1]
+[ext_resource path="res://Birdo/Bird.dae" type="PackedScene" id=2]
+
+[sub_resource type="SphereShape" id=1]
+
+radius = 0.522374
+
+[node name="Birdo" type="KinematicBody"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 0
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 1 )
+_sections_unfolded = [ "Axis Lock", "Collision", "Linear", "Transform" ]
+
+[node name="Bird" parent="." index="0" instance=ExtResource( 2 )]
+
+transform = Transform( -1, -2.75931e-07, -1.73305e-07, 0, 0.531868, -0.846827, 3.25841e-07, -0.846827, -0.531868, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Armature" parent="Bird" index="0"]
+
+transform = Transform( 0.117763, 0, 0, 0, 0.10775, -0.0475183, 0, 0.0475183, 0.10775, -0.00252974, 0.132544, 0.0559116 )
+
+[node name="collision_shape" type="CollisionShape" parent="." index="1"]
+
+shape = SubResource( 1 )
+disabled = false
+
+
+[editable path="Bird"]
