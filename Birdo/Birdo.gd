@@ -36,9 +36,9 @@ func _physics_process(delta):
 	if Input.is_action_pressed("maldekstre"):
 		Birdo.rotate_object_local(Vector3(0,0,1),angula_rapido)
 	if Input.is_action_pressed("dekstre2"):
-		Birdo.rotate_object_local(Vector3(0,-1,0),angula_rapido)
+		Birdo.rotate_object_local(Vector3(0,-1,0),angula_rapido/2)
 	if Input.is_action_pressed("maldekstre2"):
-		Birdo.rotate_object_local(Vector3(0,1,0),angula_rapido)
+		Birdo.rotate_object_local(Vector3(0,1,0),angula_rapido/2)
 	movo = Vector3(0,0,0)
 	var t = Birdo.get_transform().basis.z.normalized()
 	var x = t.x
