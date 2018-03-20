@@ -1,14 +1,14 @@
 extends KinematicBody
 
 onready var Birdo = get_node(".")
-onready var Animo = get_node("Bird/animation_player")
+onready var Animo = get_node("Modelo/animation_player")
 onready var os = OS.get_name()
 
 var movo = Vector3(0,0,0)
 const angula_rapido = 0.025
 const RAPIDO = 10
 var rapido = 10
-const a = 0.02
+const a = 0.01
 
 func _ready():
 	Animo.play("flugi")
@@ -59,12 +59,12 @@ func _physics_process(delta):
 		movo += Birdo.get_global_transform().basis.y.normalized() * rapido/3-\
 				Birdo.get_global_transform().basis.z.normalized() * rapido
 		rapido += a*2
-		if rapido > 25:
-			rapido = 25
+		if rapido > 20:
+			rapido = 20
 	else:
 		rapido -= a/3
-		if rapido > 15:
-			rapido = 15
+		if rapido > 10:
+			rapido = 10
 	Birdo.move_and_slide(movo, Vector3( 0, 0, 0 ), 0.05, 6, 0.785398)
 	Birdo.move_and_collide(Vector3(0,-0.06,0))
 	print(rapido)

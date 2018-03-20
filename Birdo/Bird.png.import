@@ -11,14 +11,14 @@ source_file="res://Birdo/Bird.png"
 source_md5="b305e3c533808f8f20db688a7bbb7276"
 
 dest_files=[ "res://.import/Bird.png-8e58ad162d3a8887d0745dd238e9cb9b.s3tc.stex", "res://.import/Bird.png-8e58ad162d3a8887d0745dd238e9cb9b.etc2.stex" ]
-dest_md5="b0f84e06e13e37776e241729d04ad21b"
+dest_md5="66fda301d2ba49fe7d00f00f1842bba1"
 
 [params]
 
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
-compress/normal_map=0
+compress/normal_map=1
 flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
