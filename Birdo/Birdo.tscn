@@ -34,7 +34,7 @@ transform = Transform( 0.117763, 0, 0, 0, 0.111346, -0.0383444, 0, 0.0383444, 0.
 
 [node name="Sphere" parent="Bird/Armature/skeleton" index="0"]
 
-_sections_unfolded = [ "Geometry" ]
+_sections_unfolded = [ "Geometry", "material" ]
 
 [node name="collision_shape" type="CollisionShape" parent="." index="1"]
 

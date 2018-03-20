@@ -4,8 +4,11 @@ onready var Birdo = get_node(".")
 onready var Animo = get_node("Bird/animation_player")
 onready var os = OS.get_name()
 
-var rapido = Vector3(0,0,0)
+var movo = Vector3(0,0,0)
 const angula_rapido = 0.025
+const RAPIDO = 10
+var rapido = 10
+const a = 0.02
 
 func _ready():
 	Animo.play("flugi")
@@ -26,40 +29,44 @@ func _process(delta):
 func _physics_process(delta):
 	if Input.is_action_pressed("supre"):
 		Birdo.rotate_object_local(Vector3(-1,0,0),angula_rapido)
-#		Birdo.rotate(Vector3(-1,0,0),angula_rapido)
-#		Birdo.rotate_x(-angula_rapido)
 	if Input.is_action_pressed("malsupre"):
 		Birdo.rotate_object_local(Vector3(1,0,0),angula_rapido)
-#		Birdo.rotate_x(angula_rapido)
 	if Input.is_action_pressed("dekstre"):
 		Birdo.rotate_object_local(Vector3(0,0,-1),angula_rapido)
-#		Birdo.rotate_z(-angula_rapido)
 	if Input.is_action_pressed("maldekstre"):
 		Birdo.rotate_object_local(Vector3(0,0,1),angula_rapido)
-#		Birdo.rotate_z(angula_rapido)
 	if Input.is_action_pressed("dekstre2"):
 		Birdo.rotate_object_local(Vector3(0,-1,0),angula_rapido)
-#		Birdo.rotate_y(-angula_rapido)
 	if Input.is_action_pressed("maldekstre2"):
 		Birdo.rotate_object_local(Vector3(0,1,0),angula_rapido)
-#		Birdo.rotate_y(angula_rapido)
-	rapido = Vector3(0,0,0)
+	movo = Vector3(0,0,0)
 	var t = Birdo.get_transform().basis.z.normalized()
 	var x = t.x
 	var y = t.y
 	var z = t.z
 #	if os == "Android":
 #		var akc = Input.get_accelerometer()
-#		Birdo.rotate_z(deg2rad(akc.x/8))
-#		Birdo.rotate_x(deg2rad(-akc.y/8))
+#		Birdo.rotate_object_local(Vector3(-1,0,0),deg2rad(-akc.y/8))
+#		Birdo.rotate_object_local(Vector3(0,0,1),deg2rad(akc.y/8))
 #	print(str(x)+", "+str(y)+", "+str(z))
-	if y <= 0:
-		rapido -= Birdo.get_global_transform().basis.z.normalized() * exp(-y)*5
+	if y <= -0.2:
+		movo -= Birdo.get_global_transform().basis.z.normalized() * exp(-y)*rapido/2
+		rapido -= a*2
 	else:
-		rapido -= Birdo.get_global_transform().basis.z.normalized() * exp(y)*15
+		movo -= Birdo.get_global_transform().basis.z.normalized() * exp(y)*rapido*3
+		rapido += a
 	if Input.is_action_pressed("flugi"):
-		rapido += Birdo.get_global_transform().basis.y.normalized() * 3-\
-			Birdo.get_global_transform().basis.z.normalized() * 10
-#	Birdo.set_linear_velocity(rapido)
-	Birdo.move_and_slide(rapido, Vector3( 0, 0, 0 ), 0.05, 6, 0.785398)
+		movo += Birdo.get_global_transform().basis.y.normalized() * rapido/3-\
+				Birdo.get_global_transform().basis.z.normalized() * rapido
+		rapido += a*2
+		if rapido > 25:
+			rapido = 25
+	else:
+		rapido -= a/3
+		if rapido > 15:
+			rapido = 15
+	Birdo.move_and_slide(movo, Vector3( 0, 0, 0 ), 0.05, 6, 0.785398)
 	Birdo.move_and_collide(Vector3(0,-0.06,0))
+	print(rapido)
+	if rapido < 2:
+		rapido = 2

@@ -19,6 +19,10 @@ config/icon="res://icon.png"
 window/size/width=800
 window/handheld/orientation="portrait"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "." )
+
 [gdnative]
 
 singletons=[  ]
