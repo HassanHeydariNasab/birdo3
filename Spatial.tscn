@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
-[ext_resource path="res://Birdo/Birdo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Birdo/Korvo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Butonoj/turni_dekstre.png" type="Texture" id=3]
 [ext_resource path="res://Butonoj/turni_dekstre_premita.png" type="Texture" id=4]
 [ext_resource path="res://Butonoj/bombi_premita.png" type="Texture" id=5]
@@ -190,11 +190,7 @@ script = ExtResource( 1 )
 
 environment = SubResource( 2 )
 
-[node name="Birdo" parent="." index="1" instance=ExtResource( 2 )]
-
-_sections_unfolded = [ "Angular", "Axis Lock", "Collision", "Linear", "Transform" ]
-
-[node name="Kamero" type="Camera" parent="." index="2"]
+[node name="Kamero" type="Camera" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, 0.994547, 0.104291, 0, -0.104291, 0.994547, 0, 0, 0 )
 keep_aspect = 1
@@ -210,6 +206,8 @@ size = 1.0
 near = 0.05
 far = 500.0
 _sections_unfolded = [ "Transform" ]
+
+[node name="Birdo" parent="." index="2" instance=ExtResource( 2 )]
 
 [node name="Kanvaso" type="CanvasLayer" parent="." index="3"]
 

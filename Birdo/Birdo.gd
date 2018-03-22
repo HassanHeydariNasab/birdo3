@@ -11,15 +11,15 @@ var rapido = 10
 const a = 0.01
 
 func _ready():
-	Animo.play("flugi")
+	Animo.play("flugado")
 	set_process(true)
 	set_physics_process(true)
 #	set_process_input(true)
 
 func _process(delta):
 	if Input.is_action_pressed("flugi"):
-		if Animo.get_current_animation() != "flugi":
-			Animo.play("flugi")
+		if Animo.get_current_animation() != "flugado":
+			Animo.play("flugado")
 	else:
 		Animo.play("malfermaj_flugiloj")
 
