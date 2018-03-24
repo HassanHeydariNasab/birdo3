@@ -3,6 +3,13 @@ extends KinematicBody
 onready var Birdo = get_node(".")
 onready var Animo = get_node("Modelo/animation_player")
 onready var os = OS.get_name()
+onready var Grako_1 = get_node("Grako_1")
+onready var Grako_2 = get_node("Grako_2")
+onready var Grako_3 = get_node("Grako_3")
+onready var Grakoj = [Grako_1, Grako_2, Grako_3]
+onready var Klapo_1 = get_node("Klapo_1")
+onready var Klapo_2 = get_node("Klapo_2")
+onready var Klapoj = [Klapo_1, Klapo_2]
 
 var movo = Vector3(0,0,0)
 const angula_rapido = 0.025
@@ -14,17 +21,23 @@ func _ready():
 	Animo.play("flugado")
 	set_process(true)
 	set_physics_process(true)
-#	set_process_input(true)
+	set_process_input(true)
 
 func _process(delta):
 	if Input.is_action_pressed("flugi"):
 		if Animo.get_current_animation() != "flugado":
 			Animo.play("flugado")
+			randomize()
+			Klapoj[rand_range(0,2)].play()
 	else:
 		Animo.play("malfermaj_flugiloj")
+		Klapo_1.stop()
+		Klapo_2.stop()
 
-#func _input(evento):
-#	pass
+func _input(evento):
+	if evento.is_action_pressed("graki"):
+		randomize()
+		Grakoj[int(rand_range(0,3))].play()
 
 func _physics_process(delta):
 	if Input.is_action_pressed("supre"):
