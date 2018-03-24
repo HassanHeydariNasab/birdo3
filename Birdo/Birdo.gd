@@ -6,8 +6,8 @@ onready var os = OS.get_name()
 
 var movo = Vector3(0,0,0)
 const angula_rapido = 0.025
-const RAPIDO = 10
-var rapido = 10
+const RAPIDO = 12
+var rapido = 12
 const a = 0.01
 
 func _ready():
@@ -51,7 +51,7 @@ func _physics_process(delta):
 #	print(str(x)+", "+str(y)+", "+str(z))
 	if y <= -0.2:
 		movo -= Birdo.get_global_transform().basis.z.normalized() * exp(-y)*rapido/2
-		rapido -= a*2
+		rapido -= a*1.6
 	else:
 		movo -= Birdo.get_global_transform().basis.z.normalized() * exp(y)*rapido*3
 		rapido += a
