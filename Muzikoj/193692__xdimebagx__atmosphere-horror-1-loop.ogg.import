@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/193692__xdimebagx__atmosphere-horror-1-loop.ogg-1301ce94e81d1a04eef141f9e139c567.oggstr"
+
+[deps]
+
+source_file="res://Muzikoj/193692__xdimebagx__atmosphere-horror-1-loop.ogg"
+source_md5="37b872908ba075595f51f230cfe0dad3"
+
+dest_files=[ "res://.import/193692__xdimebagx__atmosphere-horror-1-loop.ogg-1301ce94e81d1a04eef141f9e139c567.oggstr" ]
+dest_md5="f719831cb4080b78c101ff244fb1199b"
+
+[params]
+
+loop=true
+loop_offset=0

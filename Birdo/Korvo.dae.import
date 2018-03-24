@@ -7,10 +7,10 @@ path="res://.import/Korvo.dae-c84cca328f8adda991108b3d1fb93fa1.scn"
 [deps]
 
 source_file="res://Birdo/Korvo.dae"
-source_md5="a6d84d9d7e68b455400569380543fdb5"
+source_md5="754ed0fffd4f47d04afb78c00e2554e5"
 
 dest_files=[ "res://.import/Korvo.dae-c84cca328f8adda991108b3d1fb93fa1.scn" ]
-dest_md5="538f3c0e4784cb25c853fd243488b9a9"
+dest_md5="3c69176291948d12b6a57b0d5d8849c4"
 
 [params]
 

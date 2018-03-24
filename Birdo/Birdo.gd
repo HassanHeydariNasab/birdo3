@@ -68,5 +68,5 @@ func _physics_process(delta):
 	Birdo.move_and_slide(movo, Vector3( 0, 0, 0 ), 0.05, 6, 0.785398)
 	Birdo.move_and_collide(Vector3(0,-0.06,0))
 #	print(rapido)
-	if rapido < 2:
-		rapido = 2
+	if rapido < 4:
+		rapido = 4
