@@ -30,7 +30,12 @@ func _process(delta):
 			randomize()
 			Klapoj[rand_range(0,2)].play()
 	else:
-		Animo.play("malfermaj_flugiloj")
+		if Input.is_action_pressed("supre"):
+			Animo.play("malfermaj_flugiloj_supre")
+		elif Input.is_action_pressed("malsupre"):
+			Animo.play("malfermaj_flugiloj_malsupre")
+		else:
+			Animo.play("malfermaj_flugiloj")
 		Klapo_1.stop()
 		Klapo_2.stop()
 
