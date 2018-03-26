@@ -106,7 +106,7 @@ adjustment_enabled = false
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
-_sections_unfolded = [ "Background", "Fog", "Glow/levels" ]
+_sections_unfolded = [ "Ambient Light", "Background", "Fog", "Glow/levels", "Tonemap" ]
 
 [sub_resource type="SpatialMaterial" id=3]
 
@@ -341,7 +341,7 @@ directional_shadow_normal_bias = 0.8
 directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 0
 directional_shadow_max_distance = 1000.0
-_sections_unfolded = [ "Directional Shadow", "Light" ]
+_sections_unfolded = [ "Directional Shadow", "Light", "Transform" ]
 
 [node name="Monto" type="Spatial" parent="." index="6"]
 

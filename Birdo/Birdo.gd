@@ -18,24 +18,30 @@ var rapido = 12
 const a = 0.01
 
 func _ready():
-	Animo.play("flugado")
+	Animo.play("malfermaj_flugiloj")
 	set_process(true)
 	set_physics_process(true)
 	set_process_input(true)
 
 func _process(delta):
+#	print(Animo.get_current_animation())
 	if Input.is_action_pressed("flugi"):
 		if Animo.get_current_animation() != "flugado":
 			Animo.play("flugado")
-			randomize()
-			Klapoj[rand_range(0,2)].play()
-	else:
-		if Input.is_action_pressed("supre"):
+		randomize()
+		Klapoj[rand_range(0,2)].play()
+#		elif Animo.get_current_animation() != "malfermaj_flugiloj":
+#			Animo.play("malfermaj_flugiloj")
+	elif not Input.is_action_pressed("flugi"):
+		if Input.is_action_just_pressed("supre"):
 			Animo.play("malfermaj_flugiloj_supre")
-		elif Input.is_action_pressed("malsupre"):
+		elif Input.is_action_just_pressed("malsupre"):
 			Animo.play("malfermaj_flugiloj_malsupre")
-		else:
+		elif Animo.get_current_animation() != "malfermaj_flugiloj" and\
+				not (Input.is_action_pressed("supre") or Input.is_action_pressed("malsupre")):
 			Animo.play("malfermaj_flugiloj")
+	else:
+#		Animo.play("malfermaj_flugiloj")
 		Klapo_1.stop()
 		Klapo_2.stop()
 
