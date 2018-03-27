@@ -24,26 +24,27 @@ func _ready():
 	set_process_input(true)
 
 func _process(delta):
-#	print(Animo.get_current_animation())
 	if Input.is_action_pressed("flugi"):
 		if Animo.get_current_animation() != "flugado":
 			Animo.play("flugado")
-		randomize()
-		Klapoj[rand_range(0,2)].play()
-#		elif Animo.get_current_animation() != "malfermaj_flugiloj":
-#			Animo.play("malfermaj_flugiloj")
-	elif not Input.is_action_pressed("flugi"):
-		if Input.is_action_just_pressed("supre"):
-			Animo.play("malfermaj_flugiloj_supre")
-		elif Input.is_action_just_pressed("malsupre"):
-			Animo.play("malfermaj_flugiloj_malsupre")
-		elif Animo.get_current_animation() != "malfermaj_flugiloj" and\
-				not (Input.is_action_pressed("supre") or Input.is_action_pressed("malsupre")):
-			Animo.play("malfermaj_flugiloj")
-	else:
-#		Animo.play("malfermaj_flugiloj")
+	elif Input.is_action_just_released("flugi"):
 		Klapo_1.stop()
 		Klapo_2.stop()
+		Animo.play("malfermaj_flugiloj")
+		if Input.is_action_pressed("supre"):
+			Animo.play("malfermaj_flugiloj_supre")
+		elif Input.is_action_pressed("malsupre"):
+			Animo.play("malfermaj_flugiloj_malsupre")
+	elif Input.is_action_just_pressed("supre"):
+		Animo.play("malfermaj_flugiloj_supre")
+	elif Input.is_action_just_pressed("malsupre"):
+		Animo.play("malfermaj_flugiloj_malsupre")
+	elif not Input.is_action_pressed("flugi"):
+		if not (Input.is_action_pressed("supre") or Input.is_action_pressed("malsupre")):
+			Klapo_1.stop()
+			Klapo_2.stop()
+			if Animo.get_current_animation() != "malfermaj_flugiloj":
+				Animo.play("malfermaj_flugiloj")
 
 func _input(evento):
 	if evento.is_action_pressed("graki"):
