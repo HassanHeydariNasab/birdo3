@@ -26,6 +26,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_pressed("flugi"):
+		Vento.set_volume_db(lerp(Vento.get_volume_db(), rapido-45, 0.5))
 		if Animo.get_current_animation() != "flugado":
 			Animo.play("flugado")
 	elif Input.is_action_just_released("flugi"):
@@ -41,12 +42,13 @@ func _process(delta):
 	elif Input.is_action_just_pressed("malsupre"):
 		Animo.play("malfermaj_flugiloj_malsupre")
 	elif not Input.is_action_pressed("flugi"):
+		Vento.set_volume_db(lerp(Vento.get_volume_db(), rapido-33, 0.3))
 		if not (Input.is_action_pressed("supre") or Input.is_action_pressed("malsupre")):
 			Klapo_1.stop()
 			Klapo_2.stop()
 			if Animo.get_current_animation() != "malfermaj_flugiloj":
 				Animo.play("malfermaj_flugiloj")
-	Vento.set_volume_db(rapido*1.5-50)
+	print(Vento.get_volume_db())
 
 func _input(evento):
 	if evento.is_action_pressed("graki"):
