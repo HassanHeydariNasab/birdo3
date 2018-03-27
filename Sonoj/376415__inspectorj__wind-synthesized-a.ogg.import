@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/376415__inspectorj__wind-synthesized-a.ogg-90401a982efa7e15e867defdb3433174.oggstr"
+
+[deps]
+
+source_file="res://Sonoj/376415__inspectorj__wind-synthesized-a.ogg"
+source_md5="ef95d0d9cd5fba324d02e76469ffd7cd"
+
+dest_files=[ "res://.import/376415__inspectorj__wind-synthesized-a.ogg-90401a982efa7e15e867defdb3433174.oggstr" ]
+dest_md5="2a14e5ccde43aa6e2e7d59f2acc9eb17"
+
+[params]
+
+loop=true
+loop_offset=0

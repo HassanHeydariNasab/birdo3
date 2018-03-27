@@ -10,6 +10,7 @@ onready var Grakoj = [Grako_1, Grako_2, Grako_3]
 onready var Klapo_1 = get_node("Klapo_1")
 onready var Klapo_2 = get_node("Klapo_2")
 onready var Klapoj = [Klapo_1, Klapo_2]
+onready var Vento = get_node("Vento")
 
 var movo = Vector3(0,0,0)
 const angula_rapido = 0.025
@@ -45,6 +46,7 @@ func _process(delta):
 			Klapo_2.stop()
 			if Animo.get_current_animation() != "malfermaj_flugiloj":
 				Animo.play("malfermaj_flugiloj")
+	Vento.set_volume_db(rapido*1.5-50)
 
 func _input(evento):
 	if evento.is_action_pressed("graki"):
@@ -76,7 +78,7 @@ func _physics_process(delta):
 #	print(str(x)+", "+str(y)+", "+str(z))
 	if y <= -0.2:
 		movo -= Birdo.get_global_transform().basis.z.normalized() * exp(-y)*rapido/2
-		rapido -= a*1.6
+		rapido -= a
 	else:
 		movo -= Birdo.get_global_transform().basis.z.normalized() * exp(y)*rapido*3
 		rapido += a
@@ -84,12 +86,20 @@ func _physics_process(delta):
 		movo += Birdo.get_global_transform().basis.y.normalized() * rapido/3-\
 				Birdo.get_global_transform().basis.z.normalized() * rapido
 		rapido += a*2
-		if rapido > 20:
-			rapido = 20
+		if y <= -0.25:
+			if rapido > 20:
+				rapido = 20
+		else:
+			if rapido > 30:
+				rapido = 30
 	else:
 		rapido -= a/3
-		if rapido > 10:
-			rapido = 10
+		if y <= 0:
+			if rapido > 15:
+				rapido = 15
+		else:
+			if rapido > 20:
+				rapido = 20
 	Birdo.move_and_slide(movo, Vector3( 0, 0, 0 ), 0.05, 6, 0.785398)
 	Birdo.move_and_collide(Vector3(0,-0.06,0))
 #	print(rapido)

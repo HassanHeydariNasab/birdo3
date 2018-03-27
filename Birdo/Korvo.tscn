@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Birdo/Birdo.gd" type="Script" id=1]
 [ext_resource path="res://Birdo/Korvo_modelo.tscn" type="PackedScene" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://Sonoj/66763__bidone__raven-3.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Sonoj/123912__treyc__batsflap-1.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Sonoj/123912__treyc__batsflap-2.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sonoj/376415__inspectorj__wind-synthesized-a.ogg" type="AudioStream" id=7]
 
 [sub_resource type="SphereShape" id=1]
 
 radius = 0.793127
 
-[node name="Birdo" type="KinematicBody" index="0"]
+[node name="Birdo" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -75,6 +76,14 @@ bus = "Master"
 stream = ExtResource( 6 )
 volume_db = -14.0
 autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Vento" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 7 )
+volume_db = -60.0
+autoplay = true
 mix_target = 0
 bus = "Master"
 

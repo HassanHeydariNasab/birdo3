@@ -11,30 +11,31 @@
 [sub_resource type="ProceduralSky" id=1]
 
 radiance_size = 4
-sky_top_color = Color( 0.0470588, 0.454902, 0.976471, 1 )
-sky_horizon_color = Color( 0.556863, 0.823529, 0.909804, 1 )
+sky_top_color = Color( 0, 0, 0, 1 )
+sky_horizon_color = Color( 0, 0, 0, 1 )
 sky_curve = 0.25
-sky_energy = 1.0
+sky_energy = 0.0
 ground_bottom_color = Color( 0.101961, 0.145098, 0.188235, 1 )
 ground_horizon_color = Color( 0.482353, 0.788235, 0.952941, 1 )
 ground_curve = 0.01
-ground_energy = 1.0
+ground_energy = 0.0
 sun_color = Color( 1, 1, 1, 1 )
 sun_latitude = 35.0
 sun_longitude = 0.0
 sun_angle_min = 1.0
 sun_angle_max = 100.0
 sun_curve = 0.05
-sun_energy = 16.0
+sun_energy = 0.0
 texture_size = 2
+_sections_unfolded = [ "Ground", "Sky", "Sun", "Texture" ]
 
 [sub_resource type="Environment" id=2]
 
 background_mode = 1
 background_sky = SubResource( 1 )
 background_sky_custom_fov = 0.0
-background_color = Color( 0.529412, 0.807843, 0.980392, 1 )
-background_energy = 10.0
+background_color = Color( 0.428528, 0.733116, 0.921875, 1 )
+background_energy = 0.0
 background_canvas_max_layer = 0
 ambient_light_color = Color( 0, 0, 0, 1 )
 ambient_light_energy = 1.0
@@ -42,15 +43,15 @@ ambient_light_sky_contribution = 1.0
 fog_enabled = true
 fog_color = Color( 0.5, 0.6, 0.7, 1 )
 fog_sun_color = Color( 1, 0.9, 0.7, 1 )
-fog_sun_amount = 0.0
+fog_sun_amount = 0.8
 fog_depth_enabled = true
-fog_depth_begin = 5.0
+fog_depth_begin = 500.0
 fog_depth_curve = 1.0
 fog_transmit_enabled = false
 fog_transmit_curve = 1.0
 fog_height_enabled = true
 fog_height_min = 0.0
-fog_height_max = 100.0
+fog_height_max = -70.0
 fog_height_curve = 1.0
 tonemap_mode = 3
 tonemap_exposure = 1.1
@@ -131,7 +132,7 @@ params_point_size = 1.0
 params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 0.160156, 0.154438, 0.148895, 1 )
+albedo_color = Color( 0.257812, 0.254744, 0.25177, 1 )
 metallic = 0.0
 metallic_specular = 0.0
 metallic_texture_channel = 4
@@ -203,7 +204,7 @@ current = true
 fov = 70.0
 size = 1.0
 near = 0.05
-far = 500.0
+far = 2000.0
 _sections_unfolded = [ "Transform" ]
 
 [node name="Birdo" parent="." index="2" instance=ExtResource( 2 )]
@@ -317,7 +318,7 @@ _sections_unfolded = [ "Light", "Omni" ]
 
 [node name="directional_light" type="DirectionalLight" parent="." index="5"]
 
-transform = Transform( 1, 0, 0, 0, 0.928177, 0.37214, 0, -0.37214, 0.928177, -15.0606, 53.7481, -207.057 )
+transform = Transform( 0.999497, 0.0317136, 0.000513648, 0, -0.0161944, 0.999869, 0.0317177, -0.999366, -0.0161862, 68.3329, 172.425, -195.999 )
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
 light_energy = 0.5
@@ -332,7 +333,7 @@ shadow_bias = 0.1
 shadow_contact = 0.0
 shadow_reverse_cull_face = false
 editor_only = false
-directional_shadow_mode = 2
+directional_shadow_mode = 1
 directional_shadow_split_1 = 0.1
 directional_shadow_split_2 = 0.2
 directional_shadow_split_3 = 0.5
@@ -340,7 +341,7 @@ directional_shadow_blend_splits = false
 directional_shadow_normal_bias = 0.8
 directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 0
-directional_shadow_max_distance = 1000.0
+directional_shadow_max_distance = 500.0
 _sections_unfolded = [ "Directional Shadow", "Light", "Transform" ]
 
 [node name="Monto" type="Spatial" parent="." index="6"]
@@ -350,7 +351,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Landscape.002" type="MeshInstance" parent="Monto" index="0"]
 
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.130095, 1.13642, -0.565653 )
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -19.3641, 1.13642, 19.6659 )
 layers = 1
 material_override = SubResource( 3 )
 cast_shadow = 0
@@ -383,7 +384,7 @@ disabled = false
 
 [node name="Landscape.003" type="MeshInstance" parent="Monto" index="1"]
 
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.130095, 1.13642, -19.9009 )
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -19.4118, 1.13642, -18.3797 )
 layers = 1
 material_override = SubResource( 3 )
 cast_shadow = 1
@@ -416,7 +417,7 @@ disabled = false
 
 [node name="Landscape.004" type="MeshInstance" parent="Monto" index="2"]
 
-transform = Transform( -3.25841e-07, 0, 2, 0, 2, 0, -2, 0, -3.25841e-07, 19.8828, 1.13642, -19.9009 )
+transform = Transform( -6.51683e-07, 0, 4, 0, 4, 0, -4, 0, -6.51683e-07, 20.0847, 1.13642, -18.8418 )
 layers = 1
 material_override = SubResource( 3 )
 cast_shadow = 1
@@ -449,7 +450,7 @@ disabled = false
 
 [node name="Landscape.005" type="MeshInstance" parent="Monto" index="3"]
 
-transform = Transform( -3.25841e-07, 0, -2, 0, 2, 0, 2, 0, -3.25841e-07, 19.8828, 1.13642, -0.513154 )
+transform = Transform( -6.51683e-07, 0, -4, 0, 4, 0, 4, 0, -6.51683e-07, 19.6179, 1.13642, 19.6299 )
 layers = 1
 material_override = SubResource( 3 )
 cast_shadow = 1
@@ -484,7 +485,7 @@ disabled = false
 
 stream = ExtResource( 7 )
 volume_db = -14.0
-autoplay = true
+autoplay = false
 mix_target = 0
 bus = "Master"
 

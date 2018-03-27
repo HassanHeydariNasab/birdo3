@@ -5,9 +5,9 @@ varying vec3 color;
 void vertex() {
 	color = NORMAL;
 	vec4 worldPos = WORLD_MATRIX[3];
-	float speed = 0.6;
+	float speed = 0.5;
 	float strength = 0.12;
-	float detail = 1.0;
+	float detail = 0.8;
 	vec2 direction = vec2(1.0, 0.0);
 	float time = TIME * speed + worldPos.x + worldPos.z;
 	float wind = (sin(time) + cos(time * detail)) * strength;

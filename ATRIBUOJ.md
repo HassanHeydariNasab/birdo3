@@ -16,3 +16,5 @@ Grako-1 kaj Grako-3: https://freesound.org/people/Bidone/sounds/66763/
 Grako-2: https://freesound.org/people/Bidone/sounds/67356/
 
 Klapoj: https://freesound.org/people/treyc/sounds/123912/
+
+Vento: https://freesound.org/people/InspectorJ/sounds/376415/
