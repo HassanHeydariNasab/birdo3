@@ -48,7 +48,6 @@ func _process(delta):
 			Klapo_2.stop()
 			if Animo.get_current_animation() != "malfermaj_flugiloj":
 				Animo.play("malfermaj_flugiloj")
-	print(Vento.get_volume_db())
 
 func _input(evento):
 	if evento.is_action_pressed("graki"):
@@ -90,18 +89,18 @@ func _physics_process(delta):
 		rapido += a*2
 		if y <= -0.25:
 			if rapido > 20:
-				rapido = 20
+				rapido = lerp(rapido, 23, 0.4)
 		else:
 			if rapido > 30:
-				rapido = 30
+				rapido = lerp(rapido, 32, 0.4)
 	else:
 		rapido -= a/3
 		if y <= 0:
 			if rapido > 15:
-				rapido = 15
+				rapido = lerp(rapido, 18, 0.4)
 		else:
 			if rapido > 20:
-				rapido = 20
+				rapido = lerp(rapido, 23, 0.4)
 	Birdo.move_and_slide(movo, Vector3( 0, 0, 0 ), 0.05, 6, 0.785398)
 	Birdo.move_and_collide(Vector3(0,-0.06,0))
 #	print(rapido)
