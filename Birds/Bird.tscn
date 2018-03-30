@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Birds/Bird.gd" type="Script" id=1]
+[ext_resource path="res://Birds/Crow_model.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sounds/66763__bidone__raven-1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/66763__bidone__raven-3.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/123912__treyc__batsflap-1.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/123912__treyc__batsflap-2.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/376415__inspectorj__wind-synthesized-a.ogg" type="AudioStream" id=7]
+
+[sub_resource type="SphereShape" id=1]
+
+radius = 0.793127
+
+[node name="Bird" type="KinematicBody"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 0
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 1 )
+_sections_unfolded = [ "Axis Lock", "Collision", "Linear", "Transform" ]
+
+[node name="Model" parent="." index="0" instance=ExtResource( 2 )]
+
+transform = Transform( -0.3, 0, -9.77524e-08, 0, 0.3, 0, 9.77524e-08, 0, -0.3, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0200806, -0.157562 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="Croak_1" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Croak_2" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Croak_3" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Flap_1" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 5 )
+volume_db = -14.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Flap_2" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 6 )
+volume_db = -14.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Wind" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 7 )
+volume_db = -70.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+

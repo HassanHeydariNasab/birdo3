@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/66763__bidone__raven-1.ogg-73d00c4bdc225eb5b1a2a3969bd56935.oggstr"
+
+[deps]
+
+source_file="res://Sounds/66763__bidone__raven-1.ogg"
+source_md5="06cb0cc4f358f1a012526e898068580c"
+
+dest_files=[ "res://.import/66763__bidone__raven-1.ogg-73d00c4bdc225eb5b1a2a3969bd56935.oggstr" ]
+dest_md5="4a1f962d6a94c02938bb6badc36b27b1"
+
+[params]
+
+loop=false
+loop_offset=0
