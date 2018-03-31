@@ -7,10 +7,10 @@ path="res://.import/island.dae-c9f0c09433740d9d47232cd19b547c79.scn"
 [deps]
 
 source_file="res://World/island.dae"
-source_md5="9aeab76d4cf397b955a05c77d37b9ae1"
+source_md5="a8d12b311edd9edc3f2ca4c3213df839"
 
 dest_files=[ "res://.import/island.dae-c9f0c09433740d9d47232cd19b547c79.scn" ]
-dest_md5="9061fef3c72c6c6a80b76e8e569a6585"
+dest_md5="fa26f59136216938a221ac4abbad62ea"
 
 [params]
 
@@ -24,7 +24,7 @@ materials/storage=1
 materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true
-meshes/storage=0
+meshes/storage=1
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
 external_files/store_in_subdir=false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Birds/Bird.tscn" type="PackedScene" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://Buttons/action_pressed.png" type="Texture" id=5]
 [ext_resource path="res://Buttons/action.png" type="Texture" id=6]
 [ext_resource path="res://World/Island.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Musics/193692__xdimebagx__atmosphere-horror-1-loop.ogg" type="AudioStream" id=8]
+[ext_resource path="res://World/sea.tres" type="Material" id=8]
+[ext_resource path="res://Musics/193692__xdimebagx__atmosphere-horror-1-loop.ogg" type="AudioStream" id=9]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -51,9 +52,9 @@ fog_depth_curve = 1.0
 fog_transmit_enabled = false
 fog_transmit_curve = 1.0
 fog_height_enabled = true
-fog_height_min = 0.0
-fog_height_max = -70.0
-fog_height_curve = 1.0
+fog_height_min = 100.0
+fog_height_max = -100.0
+fog_height_curve = 2.0
 tonemap_mode = 3
 tonemap_exposure = 1.1
 tonemap_white = 1.0
@@ -108,7 +109,11 @@ adjustment_enabled = false
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
-_sections_unfolded = [ "Glow", "Glow/levels" ]
+_sections_unfolded = [ "Adjustments", "Ambient Light", "Background", "Fog", "Glow", "Glow/levels" ]
+
+[sub_resource type="QuadMesh" id=3]
+
+size = Vector2( 1000, 1000 )
 
 [node name="Radiko" type="Spatial" index="0"]
 
@@ -206,6 +211,7 @@ visibility_mode = 1
 
 [node name="FPS" type="Label" parent="Canvas" index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -226,6 +232,7 @@ max_lines_visible = -1
 
 [node name="Elements" type="Label" parent="Canvas" index="2"]
 
+visible = false
 anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -275,7 +282,7 @@ _sections_unfolded = [ "Light", "Omni" ]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="6"]
 
-transform = Transform( -0.5, 0.750001, 0.433013, -1.62921e-07, -0.5, 0.866026, 0.866026, 0.433013, 0.25, 68.3329, 172.425, -195.999 )
+transform = Transform( 0.866026, 0.383023, 0.321394, 0, 0.642788, -0.766045, -0.5, 0.663415, 0.556671, 0, 0, 0 )
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
 light_energy = 0.5
@@ -290,7 +297,7 @@ shadow_bias = 0.1
 shadow_contact = 0.0
 shadow_reverse_cull_face = false
 editor_only = false
-directional_shadow_mode = 1
+directional_shadow_mode = 2
 directional_shadow_split_1 = 0.1
 directional_shadow_split_2 = 0.2
 directional_shadow_split_3 = 0.5
@@ -301,16 +308,35 @@ directional_shadow_depth_range = 0
 directional_shadow_max_distance = 500.0
 _sections_unfolded = [ "Directional Shadow", "Light", "Transform" ]
 
-[node name="Islands" type="Spatial" parent="." index="7"]
+[node name="World" type="Spatial" parent="." index="7"]
 
-transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -36.3391, 0 )
+transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Island" parent="Islands" index="0" instance=ExtResource( 7 )]
+[node name="Island" parent="World" index="0" instance=ExtResource( 7 )]
+
+transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0, -0.458202, 0 )
+
+[node name="Sea" type="MeshInstance" parent="World" index="1"]
+
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 8 )
+_sections_unfolded = [ "Transform", "material" ]
 
 [node name="Fonmuziko" type="AudioStreamPlayer" parent="." index="8"]
 
-stream = ExtResource( 8 )
+stream = ExtResource( 9 )
 volume_db = -14.0
 autoplay = true
 mix_target = 0
