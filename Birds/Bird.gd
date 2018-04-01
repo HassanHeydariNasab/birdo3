@@ -54,6 +54,8 @@ func _input(event):
 		Croaks[int(rand_range(0,3))].play()
 
 func _physics_process(delta):
+	if translation.y < 7:
+		translation.y = 7
 	if Input.is_action_pressed("up"):
 		rotate_object_local(Vector3(-1,0,0), angle_speed)
 	if Input.is_action_pressed("down"):
@@ -63,9 +65,9 @@ func _physics_process(delta):
 	if Input.is_action_pressed("left"):
 		rotate_object_local(Vector3(0,0,1), angle_speed)
 	if Input.is_action_pressed("right2"):
-		rotate_object_local(Vector3(0,-1,0), angle_speed/2)
+		rotate_object_local(Vector3(0,-1,0), angle_speed/3)
 	if Input.is_action_pressed("left2"):
-		rotate_object_local(Vector3(0,1,0), angle_speed/2)
+		rotate_object_local(Vector3(0,1,0), angle_speed/3)
 	movector = Vector3(0,0,0)
 	var t = get_transform().basis.z.normalized()
 	var x = t.x
