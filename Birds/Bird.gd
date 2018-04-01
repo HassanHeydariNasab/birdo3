@@ -12,7 +12,7 @@ onready var Flaps = [Flap_1, Flap_2]
 onready var Wind = get_node("Wind")
 
 var movector = Vector3(0,0,0)
-const angle_speed = 0.025
+const angle_speed = 0.016
 const SPEED = 12
 var speed = 12
 const a = 0.01
@@ -78,32 +78,22 @@ func _physics_process(delta):
 #		rotate_object_local(Vector3(-1,0,0),deg2rad(-akc.y/8))
 #		rotate_object_local(Vector3(0,0,1),deg2rad(akc.y/8))
 #	print(str(x)+", "+str(y)+", "+str(z))
-	if y <= -0.2:
-		movector -= get_global_transform().basis.z.normalized() * exp(-y)*speed/2
-		speed -= a
-	else:
-		movector -= get_global_transform().basis.z.normalized() * exp(y)*speed*3
-		speed += a
+#	print(str(speed)+'	'+str(y))
 	if Input.is_action_pressed("fly"):
-		movector += get_global_transform().basis.y.normalized() * speed/3-\
+		movector += get_global_transform().basis.y.normalized() * speed/2-\
 				get_global_transform().basis.z.normalized() * speed
-		speed += a*2
-		if y <= -0.25:
-			if speed > 20:
-				speed = lerp(speed, 23, 0.4)
-		else:
-			if speed > 30:
-				speed = lerp(speed, 32, 0.4)
+		speed += a*8
+	if y <= 0.07:
+		movector -= get_global_transform().basis.z.normalized() * exp(-y)*speed
+		speed -= (a+abs(y)/10.0)
+		if speed > 35.0:
+			speed = 35.0
+		elif speed < 10.0:
+			speed = 10.0
 	else:
-		speed -= a/3
-		if y <= 0:
-			if speed > 15:
-				speed = lerp(speed, 18, 0.4)
-		else:
-			if speed > 20:
-				speed = lerp(speed, 23, 0.4)
-	move_and_slide(movector, Vector3( 0, 0, 0 ), 0.05, 6, 0.785398)
+		movector -= get_global_transform().basis.z.normalized() * exp(y)*speed
+		speed += (a+abs(y)/10.0)
+		if speed > 35.0:
+			speed = 35.0
+	move_and_slide(movector, Vector3( 0, 0, 0 ), 0.05, 16, 0.785398)
 	move_and_collide(Vector3(0,-0.06,0))
-#	print(speed)
-	if speed < 4:
-		speed = 4
