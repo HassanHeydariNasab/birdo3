@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/209583__zott820__oven-mitt-impact-1.ogg-f82ed86fb560d1d883b69fa9b21cfbbc.oggstr"
+
+[deps]
+
+source_file="res://Sounds/209583__zott820__oven-mitt-impact-1.ogg"
+source_md5="10ff5f7d180366bc55650b1cc13eec73"
+
+dest_files=[ "res://.import/209583__zott820__oven-mitt-impact-1.ogg-f82ed86fb560d1d883b69fa9b21cfbbc.oggstr" ]
+dest_md5="c1a2d342f0f42f8a8aae24fc0fdf1a1f"
+
+[params]
+
+loop=false
+loop_offset=0

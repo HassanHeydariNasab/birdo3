@@ -10,12 +10,17 @@ onready var Flap_1 = get_node("Flap_1")
 onready var Flap_2 = get_node("Flap_2")
 onready var Flaps = [Flap_1, Flap_2]
 onready var Wind = get_node("Wind")
+onready var Collision_1 = get_node("Collision_1")
+onready var Collision_2 = get_node("Collision_2")
+onready var Collisions = [Collision_1, Collision_2]
 
 var movector = Vector3(0,0,0)
 const angle_speed = 0.016
 const SPEED = 12
 var speed = 12
 const a = 0.01
+
+var Collision_is_played = false
 
 func _ready():
 	Anim.play("open_wings")
@@ -41,7 +46,7 @@ func _process(delta):
 	elif Input.is_action_just_pressed("down"):
 		Anim.play("open_wings_down")
 	elif not Input.is_action_pressed("fly"):
-		Wind.set_volume_db(lerp(Wind.get_volume_db(), speed-33, 0.3))
+		Wind.set_volume_db(lerp(Wind.get_volume_db(), speed-40, 0.3))
 		if not (Input.is_action_pressed("up") or Input.is_action_pressed("down")):
 			Flap_1.stop()
 			Flap_2.stop()
@@ -50,8 +55,9 @@ func _process(delta):
 
 func _input(event):
 	if event.is_action_pressed("croak"):
-		randomize()
-		Croaks[int(rand_range(0,3))].play()
+		if not (Croak_1.is_playing() or Croak_2.is_playing()):
+			randomize()
+			Croaks[int(rand_range(0,3))].play()
 
 func _physics_process(delta):
 	if translation.y < 7:
@@ -95,5 +101,14 @@ func _physics_process(delta):
 		speed += (a+abs(y)/10.0)
 		if speed > 35.0:
 			speed = 35.0
-	move_and_slide(movector, Vector3( 0, 0, 0 ), 0.05, 16, 0.785398)
+	
+	move_and_slide(movector, Vector3( 0, 0, 0 ), 0.05, 2, 0.785398)
+	if is_on_wall() or is_on_ceiling() or is_on_floor():
+		speed = lerp(speed, SPEED, 0.1)
+		if not Collision_is_played and not (Collision_1.is_playing() or Collision_2.is_playing()):
+			randomize()
+			Collisions[int(rand_range(0,2))].play()
+			Collision_is_played = true
+	else:
+		Collision_is_played = false
 	move_and_collide(Vector3(0,-0.06,0))

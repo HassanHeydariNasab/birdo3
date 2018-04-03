@@ -13,8 +13,10 @@ Atmosphere: https://freesound.org/people/xDimebagx/sounds/193692/
 
 Croak-1 kaj Grako-3: https://freesound.org/people/Bidone/sounds/66763/
 
-Croak-2: https://freesound.org/people/Bidone/sounds/67356/
+Croak-2: https://freesound.org/people/inchadney/sounds/124925/
 
 Flaps: https://freesound.org/people/treyc/sounds/123912/
 
 Wind: https://freesound.org/people/InspectorJ/sounds/376415/
+
+Collisions: https://freesound.org/people/Zott820/sounds/209583/

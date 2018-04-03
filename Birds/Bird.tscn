@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Birds/Bird.gd" type="Script" id=1]
 [ext_resource path="res://Birds/Crow_model.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sounds/66763__bidone__raven-1.ogg" type="AudioStream" id=3]
-[ext_resource path="res://Sounds/66763__bidone__raven-3.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Sounds/123912__treyc__batsflap-1.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Sounds/123912__treyc__batsflap-2.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Sounds/376415__inspectorj__wind-synthesized-a.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/124925__inchadney__crow.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/66763__bidone__raven-3.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/123912__treyc__batsflap-1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/123912__treyc__batsflap-2.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/376415__inspectorj__wind-synthesized-a.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/209583__zott820__oven-mitt-impact-1.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/209583__zott820__oven-mitt-impact-2.ogg" type="AudioStream" id=10]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -49,15 +52,15 @@ bus = "Master"
 
 [node name="Croak_2" type="AudioStreamPlayer" parent="." index="3"]
 
-stream = ExtResource( 3 )
-volume_db = 0.0
+stream = ExtResource( 4 )
+volume_db = -20.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
 [node name="Croak_3" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
@@ -65,7 +68,7 @@ bus = "Master"
 
 [node name="Flap_1" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = -14.0
 autoplay = false
 mix_target = 0
@@ -73,7 +76,7 @@ bus = "Master"
 
 [node name="Flap_2" type="AudioStreamPlayer" parent="." index="6"]
 
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 volume_db = -14.0
 autoplay = false
 mix_target = 0
@@ -81,9 +84,25 @@ bus = "Master"
 
 [node name="Wind" type="AudioStreamPlayer" parent="." index="7"]
 
-stream = ExtResource( 7 )
+stream = ExtResource( 8 )
 volume_db = -70.0
 autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="Collision_1" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 9 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Collision_2" type="AudioStreamPlayer" parent="." index="9"]
+
+stream = ExtResource( 10 )
+volume_db = -5.0
+autoplay = false
 mix_target = 0
 bus = "Master"
 
