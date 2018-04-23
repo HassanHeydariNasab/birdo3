@@ -1,14 +1,15 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Birds/Bird.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Buttons/turn_right.png" type="Texture" id=3]
-[ext_resource path="res://Buttons/turn_right_pressed.png" type="Texture" id=4]
-[ext_resource path="res://Buttons/action_pressed.png" type="Texture" id=5]
-[ext_resource path="res://Buttons/action.png" type="Texture" id=6]
-[ext_resource path="res://World/Island.tscn" type="PackedScene" id=7]
-[ext_resource path="res://World/sea.tres" type="Material" id=8]
-[ext_resource path="res://Musics/193692__xdimebagx__atmosphere-horror-1-loop.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Elements/Cube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Buttons/turn_right.png" type="Texture" id=4]
+[ext_resource path="res://Buttons/turn_right_pressed.png" type="Texture" id=5]
+[ext_resource path="res://Buttons/action_pressed.png" type="Texture" id=6]
+[ext_resource path="res://Buttons/action.png" type="Texture" id=7]
+[ext_resource path="res://World/Island.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World/sea.tres" type="Material" id=9]
+[ext_resource path="res://Musics/193692__xdimebagx__atmosphere-horror-1-loop.ogg" type="AudioStream" id=10]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -52,7 +53,7 @@ fog_depth_curve = 1.0
 fog_transmit_enabled = false
 fog_transmit_curve = 1.0
 fog_height_enabled = true
-fog_height_min = 100.0
+fog_height_min = 120.0
 fog_height_max = -100.0
 fog_height_curve = 2.0
 tonemap_mode = 3
@@ -146,6 +147,30 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 108.01, 0 )
 
 [node name="Elements" type="Spatial" parent="." index="3"]
 
+[node name="Cube" parent="Elements" index="0" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.8143, 209.497 )
+
+[node name="Cube2" parent="Elements" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 41.0954, -135.24 )
+
+[node name="Cube3" parent="Elements" index="2" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -249.383, 23.2504, 96.3311 )
+
+[node name="Cube4" parent="Elements" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -394.445, 22.2976, -119.379 )
+
+[node name="Cube5" parent="Elements" index="4" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -214.805, 20.2121, 276.74 )
+
+[node name="Cube6" parent="Elements" index="5" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6039, 76.0386, 150.359 )
+
 [node name="Canvas" type="CanvasLayer" parent="." index="4"]
 
 layer = 1
@@ -171,8 +196,8 @@ size_flags_vertical = 1
 [node name="Right2" type="TouchScreenButton" parent="Canvas/Controls" index="0"]
 
 position = Vector2( 531.127, 327.559 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 4 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 5 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -185,8 +210,8 @@ visibility_mode = 1
 
 position = Vector2( 272.041, 586.646 )
 rotation = 3.14159
-normal = ExtResource( 3 )
-pressed = ExtResource( 4 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 5 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -199,8 +224,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Fly" type="TouchScreenButton" parent="Canvas/Controls" index="2"]
 
 position = Vector2( 266.489, 318.306 )
-normal = ExtResource( 5 )
-pressed = ExtResource( 6 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 7 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -312,9 +337,9 @@ _sections_unfolded = [ "Directional Shadow", "Light", "Transform" ]
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Island" parent="World" index="0" instance=ExtResource( 7 )]
+[node name="Island" parent="World" index="0" instance=ExtResource( 8 )]
 
-transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0, -0.458202, 0 )
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.648637, 0 )
 
 [node name="Sea" type="MeshInstance" parent="World" index="1"]
 
@@ -330,12 +355,12 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 8 )
-_sections_unfolded = [ "Transform", "material" ]
+material/0 = ExtResource( 9 )
+_sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="Fonmuziko" type="AudioStreamPlayer" parent="." index="8"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 10 )
 volume_db = -14.0
 autoplay = true
 mix_target = 0

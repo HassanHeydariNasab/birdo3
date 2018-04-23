@@ -66,7 +66,7 @@ _sections_unfolded = [ "Albedo", "Flags", "Parameters" ]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Cube" type="Area" index="0"]
+[node name="Cube" type="Area"]
 
 input_ray_pickable = false
 input_capture_on_drag = false
