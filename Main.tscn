@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Birds/Bird.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Elements/Cube.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Buttons/turn_right.png" type="Texture" id=4]
-[ext_resource path="res://Buttons/turn_right_pressed.png" type="Texture" id=5]
-[ext_resource path="res://Buttons/action_pressed.png" type="Texture" id=6]
-[ext_resource path="res://Buttons/action.png" type="Texture" id=7]
-[ext_resource path="res://World/Island.tscn" type="PackedScene" id=8]
-[ext_resource path="res://World/sea.tres" type="Material" id=9]
-[ext_resource path="res://Musics/193692__xdimebagx__atmosphere-horror-1-loop.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Enemies/Enemy1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Elements/Cube.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Buttons/turn_right.png" type="Texture" id=5]
+[ext_resource path="res://Buttons/turn_right_pressed.png" type="Texture" id=6]
+[ext_resource path="res://Buttons/action_pressed.png" type="Texture" id=7]
+[ext_resource path="res://Buttons/action.png" type="Texture" id=8]
+[ext_resource path="res://World/Island.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World/sea.tres" type="Material" id=10]
+[ext_resource path="res://Musics/193692__xdimebagx__atmosphere-horror-1-loop.ogg" type="AudioStream" id=11]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -116,7 +117,7 @@ _sections_unfolded = [ "Adjustments", "Ambient Light", "Background", "Fog", "Glo
 
 size = Vector2( 1000, 1000 )
 
-[node name="Radiko" type="Spatial" index="0"]
+[node name="Main" type="Spatial"]
 
 script = ExtResource( 1 )
 
@@ -145,33 +146,91 @@ _sections_unfolded = [ "Transform" ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 108.01, 0 )
 
-[node name="Elements" type="Spatial" parent="." index="3"]
+[node name="Enemies" type="Spatial" parent="." index="3"]
 
-[node name="Cube" parent="Elements" index="0" instance=ExtResource( 3 )]
+[node name="Enemy6" parent="Enemies" index="0" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 356.163, 195.116, -316.716 )
+
+[node name="Enemy11" parent="Enemies" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 356.163, 195.116, 170.613 )
+
+[node name="Enemy13" parent="Enemies" index="2" instance=ExtResource( 3 )]
+
+transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, 300.46, 195.116, -180.176 )
+
+[node name="Enemy15" parent="Enemies" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, -170.247, 195.116, -573.095 )
+
+[node name="Enemy7" parent="Enemies" index="4" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -356.986, 195.116, -316.716 )
+
+[node name="Enemy9" parent="Enemies" index="5" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -356.986, 195.116, 170.613 )
+
+[node name="Enemy14" parent="Enemies" index="6" instance=ExtResource( 3 )]
+
+transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, 172.513, 195.116, 521.402 )
+
+[node name="Enemy17" parent="Enemies" index="7" instance=ExtResource( 3 )]
+
+transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, -298.194, 195.116, 128.482 )
+
+[node name="Enemy8" parent="Enemies" index="8" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 195.116, -316.716 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Enemy10" parent="Enemies" index="9" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 195.116, 170.613 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Enemy12" parent="Enemies" index="10" instance=ExtResource( 3 )]
+
+transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, 236.56, 195.116, 170.208 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Enemy16" parent="Enemies" index="11" instance=ExtResource( 3 )]
+
+transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, -234.146, 195.116, -222.711 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Elements" type="Spatial" parent="." index="4"]
+
+editor/display_folded = true
+
+[node name="Cube" parent="Elements" index="0" instance=ExtResource( 4 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.8143, 209.497 )
 
-[node name="Cube2" parent="Elements" index="1" instance=ExtResource( 3 )]
+[node name="Cube2" parent="Elements" index="1" instance=ExtResource( 4 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 41.0954, -135.24 )
 
-[node name="Cube3" parent="Elements" index="2" instance=ExtResource( 3 )]
+[node name="Cube3" parent="Elements" index="2" instance=ExtResource( 4 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -249.383, 23.2504, 96.3311 )
 
-[node name="Cube4" parent="Elements" index="3" instance=ExtResource( 3 )]
+[node name="Cube4" parent="Elements" index="3" instance=ExtResource( 4 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -394.445, 22.2976, -119.379 )
 
-[node name="Cube5" parent="Elements" index="4" instance=ExtResource( 3 )]
+[node name="Cube5" parent="Elements" index="4" instance=ExtResource( 4 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -214.805, 20.2121, 276.74 )
 
-[node name="Cube6" parent="Elements" index="5" instance=ExtResource( 3 )]
+[node name="Cube6" parent="Elements" index="5" instance=ExtResource( 4 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6039, 76.0386, 150.359 )
 
-[node name="Canvas" type="CanvasLayer" parent="." index="4"]
+[node name="Bullets" type="Spatial" parent="." index="5"]
+
+[node name="Canvas" type="CanvasLayer" parent="." index="6"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -196,8 +255,8 @@ size_flags_vertical = 1
 [node name="Right2" type="TouchScreenButton" parent="Canvas/Controls" index="0"]
 
 position = Vector2( 531.127, 327.559 )
-normal = ExtResource( 4 )
-pressed = ExtResource( 5 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 6 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -210,8 +269,8 @@ visibility_mode = 1
 
 position = Vector2( 272.041, 586.646 )
 rotation = 3.14159
-normal = ExtResource( 4 )
-pressed = ExtResource( 5 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 6 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -224,8 +283,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Fly" type="TouchScreenButton" parent="Canvas/Controls" index="2"]
 
 position = Vector2( 266.489, 318.306 )
-normal = ExtResource( 6 )
-pressed = ExtResource( 7 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 8 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -280,7 +339,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="OmniLight" type="OmniLight" parent="." index="5"]
+[node name="OmniLight" type="OmniLight" parent="." index="7"]
 
 transform = Transform( 0.77838, -0.406102, -0.478753, 0.627793, 0.503513, 0.59359, 0, -0.762597, 0.646873, 46.9679, 106.569, 50.1418 )
 visible = false
@@ -304,7 +363,7 @@ omni_shadow_mode = 1
 omni_shadow_detail = 0
 _sections_unfolded = [ "Light", "Omni" ]
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." index="6"]
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="8"]
 
 transform = Transform( 0.866026, 0.383023, 0.321394, 0, 0.642788, -0.766045, -0.5, 0.663415, 0.556671, 0, 0, 0 )
 layers = 1
@@ -332,12 +391,12 @@ directional_shadow_depth_range = 0
 directional_shadow_max_distance = 500.0
 _sections_unfolded = [ "Directional Shadow", "Light", "Transform" ]
 
-[node name="World" type="Spatial" parent="." index="7"]
+[node name="World" type="Spatial" parent="." index="9"]
 
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Island" parent="World" index="0" instance=ExtResource( 8 )]
+[node name="Island" parent="World" index="0" instance=ExtResource( 9 )]
 
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.648637, 0 )
 
@@ -355,12 +414,12 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 9 )
+material/0 = ExtResource( 10 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
-[node name="Fonmuziko" type="AudioStreamPlayer" parent="." index="8"]
+[node name="Fonmuziko" type="AudioStreamPlayer" parent="." index="10"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 11 )
 volume_db = -14.0
 autoplay = true
 mix_target = 0
