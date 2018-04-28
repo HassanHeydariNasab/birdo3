@@ -66,11 +66,11 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Emission", "Flags", "Vertex Color" ]
 
-[sub_resource type="SphereShape" id=5]
+[sub_resource type="SphereShape" id=3]
 
-radius = 4096.0
+radius = 1000.0
 
-[node name="Enemy" type="Spatial"]
+[node name="Enemy" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -105,24 +105,25 @@ angular_damp = 1.0
 priority = 0.0
 monitoring = true
 monitorable = true
-collision_layer = 1
-collision_mask = 1
+collision_layer = 4
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
 reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 disabled = false
 
 [node name="Reload" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 0.3
+wait_time = 0.1
 one_shot = false
 autostart = false
 
