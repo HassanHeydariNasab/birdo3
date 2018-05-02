@@ -20,3 +20,5 @@ Flaps: https://freesound.org/people/treyc/sounds/123912/
 Wind: https://freesound.org/people/InspectorJ/sounds/376415/
 
 Collisions: https://freesound.org/people/Zott820/sounds/209583/
+
+Enemy1 Shoot: https://freesound.org/people/fins/sounds/146730/
