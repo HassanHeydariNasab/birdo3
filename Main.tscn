@@ -117,7 +117,7 @@ _sections_unfolded = [ "Adjustments", "Ambient Light", "Background", "Fog", "Glo
 
 size = Vector2( 1000, 1000 )
 
-[node name="Main" type="Spatial" index="0"]
+[node name="Main" type="Spatial"]
 
 script = ExtResource( 1 )
 
@@ -151,52 +151,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 108.01, 0 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 356.163, 195.116, -316.716 )
 
-[node name="Enemy11" parent="Enemies" index="1" instance=ExtResource( 3 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 356.163, 410.028, 170.613 )
-
-[node name="Enemy13" parent="Enemies" index="2" instance=ExtResource( 3 )]
-
-transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, 300.46, 128.772, -180.176 )
-
-[node name="Enemy15" parent="Enemies" index="3" instance=ExtResource( 3 )]
-
-transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, -170.247, 195.116, -573.095 )
-
-[node name="Enemy7" parent="Enemies" index="4" instance=ExtResource( 3 )]
+[node name="Enemy7" parent="Enemies" index="1" instance=ExtResource( 3 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -356.986, 128.772, -316.716 )
 
-[node name="Enemy9" parent="Enemies" index="5" instance=ExtResource( 3 )]
+[node name="Enemy16" parent="Enemies" index="2" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -356.986, 195.116, 170.613 )
-
-[node name="Enemy14" parent="Enemies" index="6" instance=ExtResource( 3 )]
-
-transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, 172.513, 195.116, 521.402 )
-
-[node name="Enemy17" parent="Enemies" index="7" instance=ExtResource( 3 )]
-
-transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, -298.194, -86.1399, 128.482 )
-
-[node name="Enemy8" parent="Enemies" index="8" instance=ExtResource( 3 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 410.028, -316.716 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Enemy10" parent="Enemies" index="9" instance=ExtResource( 3 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -86.1399, 170.613 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Enemy12" parent="Enemies" index="10" instance=ExtResource( 3 )]
-
-transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, 236.56, 195.116, 170.208 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Enemy16" parent="Enemies" index="11" instance=ExtResource( 3 )]
-
-transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, -234.146, 410.028, -222.711 )
+transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, -234.146, 410.028, 634.193 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Elements" type="Spatial" parent="." index="4"]
@@ -231,6 +192,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6039, 76.0386, 150.359 )
 
 [node name="Canvas" type="CanvasLayer" parent="." index="6"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -392,6 +354,7 @@ _sections_unfolded = [ "Directional Shadow", "Light", "Transform" ]
 
 [node name="World" type="Spatial" parent="." index="9"]
 
+editor/display_folded = true
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 

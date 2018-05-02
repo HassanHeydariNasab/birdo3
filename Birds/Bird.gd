@@ -30,7 +30,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_pressed("fly"):
-		Wind.set_volume_db(lerp(Wind.get_volume_db(), speed-45, 0.5))
+		Wind.set_volume_db(lerp(Wind.get_volume_db(), speed-50, 0.5))
 		if Anim.get_current_animation() != "fly":
 			Anim.play("fly")
 	elif Input.is_action_just_released("fly"):
@@ -46,7 +46,7 @@ func _process(delta):
 	elif Input.is_action_just_pressed("down"):
 		Anim.play("open_wings_down")
 	elif not Input.is_action_pressed("fly"):
-		Wind.set_volume_db(lerp(Wind.get_volume_db(), speed-40, 0.3))
+		Wind.set_volume_db(lerp(Wind.get_volume_db(), speed-45, 0.3))
 		if not (Input.is_action_pressed("up") or Input.is_action_pressed("down")):
 			Flap_1.stop()
 			Flap_2.stop()
