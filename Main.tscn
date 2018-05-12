@@ -117,7 +117,7 @@ _sections_unfolded = [ "Adjustments", "Ambient Light", "Background", "Fog", "Glo
 
 size = Vector2( 1000, 1000 )
 
-[node name="Main" type="Spatial" index="0"]
+[node name="Main" type="Spatial"]
 
 script = ExtResource( 1 )
 
@@ -162,8 +162,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Elements" type="Spatial" parent="." index="4"]
 
-editor/display_folded = true
-
 [node name="Cube" parent="Elements" index="0" instance=ExtResource( 4 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.8143, 209.497 )
@@ -192,7 +190,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6039, 76.0386, 150.359 )
 
 [node name="Canvas" type="CanvasLayer" parent="." index="6"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -299,6 +296,33 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
+
+[node name="Energy" type="Label" parent="Canvas" index="3"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -35.0
+margin_right = 35.0
+margin_bottom = 14.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.871094, 0.0544434, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 4
+text = "321"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants" ]
 
 [node name="OmniLight" type="OmniLight" parent="." index="7"]
 

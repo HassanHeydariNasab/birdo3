@@ -32,7 +32,8 @@ func _process(delta):
 	if Input.is_action_pressed("fly"):
 		Wind.set_volume_db(lerp(Wind.get_volume_db(), speed-50, 0.5))
 		if Anim.get_current_animation() != "fly":
-			Anim.play("fly")
+			if G.energy >= 1:
+				Anim.play("fly")
 	elif Input.is_action_just_released("fly"):
 		Flap_1.stop()
 		Flap_2.stop()
@@ -86,9 +87,11 @@ func _physics_process(delta):
 #	print(str(x)+", "+str(y)+", "+str(z))
 #	print(str(speed)+'	'+str(y))
 	if Input.is_action_pressed("fly"):
-		movector += get_global_transform().basis.y.normalized() * speed/2-\
-				get_global_transform().basis.z.normalized() * speed
-		speed += a*8
+		if G.energy >= 1:
+			G.energy -= 1
+			movector += get_global_transform().basis.y.normalized() * speed/2-\
+					get_global_transform().basis.z.normalized() * speed
+			speed += a*8
 	if y <= 0.07:
 		movector -= get_global_transform().basis.z.normalized() * exp(-y)*speed
 		speed -= (a+abs(y)/10.0)
