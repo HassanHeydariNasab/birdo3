@@ -71,7 +71,7 @@ _sections_unfolded = [ "Albedo", "Emission", "Flags", "Vertex Color" ]
 
 radius = 1000.0
 
-[node name="Enemy" type="Spatial" index="0"]
+[node name="Enemy" type="Spatial"]
 
 script = ExtResource( 1 )
 

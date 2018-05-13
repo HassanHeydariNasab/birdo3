@@ -149,15 +149,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 108.01, 0 )
 
 [node name="Enemy6" parent="Enemies" index="0" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 356.163, 195.116, -316.716 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2674.49, 417.875, 1611.62 )
 
 [node name="Enemy7" parent="Enemies" index="1" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -356.986, 128.772, -316.716 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -356.986, 128.772, -2645.26 )
 
 [node name="Enemy16" parent="Enemies" index="2" instance=ExtResource( 3 )]
 
-transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, -234.146, 410.028, 634.193 )
+transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, -234.146, 892.592, 1511.02 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Elements" type="Spatial" parent="." index="4"]

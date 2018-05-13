@@ -112,8 +112,8 @@ _sections_unfolded = [ "Albedo", "Emission", "Flags", "Vertex Color" ]
 [sub_resource type="SphereMesh" id=4]
 
 material = SubResource( 3 )
-radius = 0.2
-height = 0.4
+radius = 0.15
+height = 0.3
 radial_segments = 8
 rings = 6
 is_hemisphere = false
@@ -221,7 +221,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-emitting = true
+emitting = false
 amount = 8
 lifetime = 0.05
 one_shot = false
