@@ -1,4 +1,4 @@
-extends Spatial
+extends KinematicBody
 
 var Bullet = preload('res://Bullets/Bullet1.tscn')
 onready var Shoot = get_node('Shoot')
@@ -15,8 +15,8 @@ func _process(delta):
 	randomize()
 	target += Vector3(rand_range(-1000,1000), rand_range(-1000,1000),
 						rand_range(-1000,1000))
-	if self.get_global_transform().origin.distance_to(target) > 100:
-		global_translate(get_global_transform().basis.z.normalized()*-0.3)
+	if self.get_global_transform().origin.distance_to(target) > 150:
+		move_and_slide(get_global_transform().basis.z.normalized()*-50)
 
 
 func _on_Area_body_entered(body):

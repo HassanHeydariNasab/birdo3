@@ -11,9 +11,10 @@
 [ext_resource path="res://Sounds/209583__zott820__oven-mitt-impact-1.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Sounds/209583__zott820__oven-mitt-impact-2.ogg" type="AudioStream" id=10]
 
-[sub_resource type="SphereShape" id=1]
+[sub_resource type="CapsuleShape" id=1]
 
-radius = 0.793127
+radius = 0.425557
+height = 1.34249
 
 [sub_resource type="ParticlesMaterial" id=2]
 
@@ -118,12 +119,12 @@ radial_segments = 8
 rings = 6
 is_hemisphere = false
 
-[node name="Bird" type="KinematicBody" index="0"]
+[node name="Bird" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 2
-collision_mask = 1
+collision_mask = 4101
 axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = false
@@ -141,9 +142,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0200806, -0.157562 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 0.5, 0, -1, 0, -1.62921e-07, 0, 0.322746, -0.0156844 )
 shape = SubResource( 1 )
 disabled = false
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Croak_1" type="AudioStreamPlayer" parent="." index="2"]
 

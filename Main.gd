@@ -4,10 +4,12 @@ onready var FPS = get_node("Canvas/FPS")
 onready var Bird = get_node("Bird")
 onready var Camera = get_node("Camera")
 onready var Energy = get_node("Canvas/Energy")
+onready var Life = get_node("Canvas/Life")
 
 func _ready():
 	G.Main = self
 	G.energy = 10000
+	G.life = 10
 	set_process(true)
 
 func _process(delta):

@@ -158,7 +158,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -356.986, 128.772, -2645.26 )
 [node name="Enemy16" parent="Enemies" index="2" instance=ExtResource( 3 )]
 
 transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, -234.146, 892.592, 1511.02 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+
+[node name="Enemy17" parent="Enemies" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, 0, 182.173, 396.666 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 
 [node name="Elements" type="Spatial" parent="." index="4"]
 
@@ -314,7 +319,34 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0.871094, 0.0544434, 1 )
+custom_colors/font_color_shadow = Color( 0.358017, 0.5798, 0.925781, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 4
+text = "321"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants" ]
+
+[node name="Life" type="Label" parent="Canvas" index="4"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -280.0
+margin_right = -210.0
+margin_bottom = 14.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.988281, 0.0424652, 0.0424652, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
 custom_constants/shadow_as_outline = 4
