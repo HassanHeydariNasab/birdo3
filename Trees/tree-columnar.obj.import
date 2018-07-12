@@ -7,10 +7,7 @@ path="res://.import/tree-columnar.obj-cbd19dd3668157bc03465cbb6a50acfe.scn"
 [deps]
 
 source_file="res://Trees/tree-columnar.obj"
-source_md5="91f2d8c56336efb0877aa23e65c7ed0a"
-
 dest_files=[ "res://.import/tree-columnar.obj-cbd19dd3668157bc03465cbb6a50acfe.scn" ]
-dest_md5="ef2eced8869217f89ea51e338c8a696a"
 
 [params]
 

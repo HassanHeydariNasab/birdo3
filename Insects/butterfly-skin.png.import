@@ -7,10 +7,7 @@ path="res://.import/butterfly-skin.png-565967511c27b3b2152f8cfb371fdbed.stex"
 [deps]
 
 source_file="res://Insects/butterfly-skin.png"
-source_md5="e889880820790cb074c133a68c3d1c45"
-
 dest_files=[ "res://.import/butterfly-skin.png-565967511c27b3b2152f8cfb371fdbed.stex" ]
-dest_md5="0fcff478bbcc6b66bc989ceed97396d0"
 
 [params]
 

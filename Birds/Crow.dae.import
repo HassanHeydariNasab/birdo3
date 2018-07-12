@@ -7,10 +7,7 @@ path="res://.import/Crow.dae-ef15ebe37b8b2c0e67f5f0bdcd23f73e.scn"
 [deps]
 
 source_file="res://Birds/Crow.dae"
-source_md5="03e4c7e1bdfc0bae35e979d33ae6b704"
-
 dest_files=[ "res://.import/Crow.dae-ef15ebe37b8b2c0e67f5f0bdcd23f73e.scn" ]
-dest_md5="45dea5f5b40d9a39dde15a6157f307d9"
 
 [params]
 

@@ -113,6 +113,7 @@ _sections_unfolded = [ "Albedo", "Emission", "Flags", "Vertex Color" ]
 [sub_resource type="SphereMesh" id=4]
 
 material = SubResource( 3 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 radius = 0.15
 height = 0.3
 radial_segments = 8
@@ -151,6 +152,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -159,6 +161,7 @@ bus = "Master"
 
 stream = ExtResource( 4 )
 volume_db = -20.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -167,6 +170,7 @@ bus = "Master"
 
 stream = ExtResource( 5 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -175,6 +179,7 @@ bus = "Master"
 
 stream = ExtResource( 6 )
 volume_db = -14.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -183,6 +188,7 @@ bus = "Master"
 
 stream = ExtResource( 7 )
 volume_db = -14.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -191,6 +197,7 @@ bus = "Master"
 
 stream = ExtResource( 8 )
 volume_db = -70.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
@@ -199,6 +206,7 @@ bus = "Master"
 
 stream = ExtResource( 9 )
 volume_db = -10.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -207,6 +215,7 @@ bus = "Master"
 
 stream = ExtResource( 10 )
 volume_db = -5.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"

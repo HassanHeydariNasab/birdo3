@@ -7,10 +7,7 @@ path="res://.import/123912__treyc__batsflap-2.ogg-5f4606fce03305d2ab054f4758e9cc
 [deps]
 
 source_file="res://Sounds/123912__treyc__batsflap-2.ogg"
-source_md5="a6eeee6834614929b8397a95c7951ba5"
-
 dest_files=[ "res://.import/123912__treyc__batsflap-2.ogg-5f4606fce03305d2ab054f4758e9cc5c.oggstr" ]
-dest_md5="56018425050848de5eb4bdcca00165c4"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/tree-open.obj-dec193763bf933d56d8449107d343e65.scn"
 [deps]
 
 source_file="res://Trees/tree-open.obj"
-source_md5="4d924fd3651f14dc255be50f805d2887"
-
 dest_files=[ "res://.import/tree-open.obj-dec193763bf933d56d8449107d343e65.scn" ]
-dest_md5="de18a0565aeb4b88c7ac5f689a661aa8"
 
 [params]
 

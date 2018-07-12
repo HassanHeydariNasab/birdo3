@@ -7,10 +7,7 @@ path="res://.import/tree-oval.obj-4fb0e8fcb16aacc671ee1edf839915cc.scn"
 [deps]
 
 source_file="res://Trees/tree-oval.obj"
-source_md5="bcf9770527ea9f32c70e577210466d11"
-
 dest_files=[ "res://.import/tree-oval.obj-4fb0e8fcb16aacc671ee1edf839915cc.scn" ]
-dest_md5="b61e9a9563955804965ae50303996824"
 
 [params]
 

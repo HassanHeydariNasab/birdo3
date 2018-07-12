@@ -7,10 +7,7 @@ path="res://.import/tree-round.obj-d48890d3cc6556698bae0367b501a76f.scn"
 [deps]
 
 source_file="res://Trees/tree-round.obj"
-source_md5="c35fca460387cc435aed8b6ec997e6bb"
-
 dest_files=[ "res://.import/tree-round.obj-d48890d3cc6556698bae0367b501a76f.scn" ]
-dest_md5="d1a83b711380297e50bb5d07c9479df7"
 
 [params]
 

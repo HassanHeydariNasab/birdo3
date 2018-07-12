@@ -7,10 +7,7 @@ path="res://.import/butterfly.dae-c760c983fc611691792997615f5a00fb.scn"
 [deps]
 
 source_file="res://Insects/butterfly.dae"
-source_md5="93e1aa0c70d1903a68be6446c255162d"
-
 dest_files=[ "res://.import/butterfly.dae-c760c983fc611691792997615f5a00fb.scn" ]
-dest_md5="3fbaac98944cb18481e914f28ee123b8"
 
 [params]
 

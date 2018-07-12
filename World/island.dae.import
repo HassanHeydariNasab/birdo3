@@ -7,10 +7,7 @@ path="res://.import/island.dae-c9f0c09433740d9d47232cd19b547c79.scn"
 [deps]
 
 source_file="res://World/island.dae"
-source_md5="a8d12b311edd9edc3f2ca4c3213df839"
-
 dest_files=[ "res://.import/island.dae-c9f0c09433740d9d47232cd19b547c79.scn" ]
-dest_md5="fa26f59136216938a221ac4abbad62ea"
 
 [params]
 

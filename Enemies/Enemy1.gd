@@ -31,7 +31,6 @@ func _on_Reload_timeout():
 	var distance = get_global_transform().origin.distance_to(target)
 	randomize()
 	var error = rand_range(-distance/10,distance/10)
-	print(error)
 	target += Vector3(error, error, error)
 	Bullet_.look_at_from_position(self.get_global_transform().origin,
 		target, Vector3(-1,0,0))

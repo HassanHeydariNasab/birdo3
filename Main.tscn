@@ -115,6 +115,7 @@ _sections_unfolded = [ "Adjustments", "Ambient Light", "Background", "Fog", "Glo
 
 [sub_resource type="QuadMesh" id=3]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector2( 1000, 1000 )
 
 [node name="Main" type="Spatial"]
@@ -158,12 +159,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -356.986, 128.772, -2645.26 )
 [node name="Enemy16" parent="Enemies" index="2" instance=ExtResource( 3 )]
 
 transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, -234.146, 892.592, 1511.02 )
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Axis Lock", "Collision", "Transform", "collision" ]
 
 [node name="Enemy17" parent="Enemies" index="3" instance=ExtResource( 3 )]
 
 transform = Transform( 0.179411, 0, 0.983774, 0, 1, 0, -0.983774, 0, 0.179411, 0, 182.173, 396.666 )
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Axis Lock", "Collision", "Transform", "collision" ]
 
 [node name="Elements" type="Spatial" parent="." index="4"]
 
@@ -439,6 +440,7 @@ _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 stream = ExtResource( 11 )
 volume_db = -14.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"

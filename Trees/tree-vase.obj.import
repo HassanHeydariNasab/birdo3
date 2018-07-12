@@ -7,10 +7,7 @@ path="res://.import/tree-vase.obj-7d7dd8a3b5d67c87763121338f0f7036.scn"
 [deps]
 
 source_file="res://Trees/tree-vase.obj"
-source_md5="088e352f00ecb225a2f93992d4c76e32"
-
 dest_files=[ "res://.import/tree-vase.obj-7d7dd8a3b5d67c87763121338f0f7036.scn" ]
-dest_md5="d811190e2840a1c983af91b7a035a1b1"
 
 [params]
 

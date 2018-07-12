@@ -7,10 +7,7 @@ path="res://.import/action2_pressed.png-626fc81b9da0cd1337190166ff94eed0.stex"
 [deps]
 
 source_file="res://Buttons/action2_pressed.png"
-source_md5="504ed0348493a554e0f3fe1a63fe2648"
-
 dest_files=[ "res://.import/action2_pressed.png-626fc81b9da0cd1337190166ff94eed0.stex" ]
-dest_md5="b0cffda8511eda37acd7be43deacdfb2"
 
 [params]
 

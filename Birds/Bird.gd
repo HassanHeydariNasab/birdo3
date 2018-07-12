@@ -1,6 +1,6 @@
 extends KinematicBody
 
-onready var Anim = get_node("Model/animation_player")
+onready var Anim = get_node("Model/AnimationPlayer")
 onready var os = OS.get_name()
 onready var Croak_1 = get_node("Croak_1")
 onready var Croak_2 = get_node("Croak_2")

@@ -7,10 +7,7 @@ path="res://.import/tree-pyramidal.obj-1543134735d12040a58162b060b0c02e.scn"
 [deps]
 
 source_file="res://Trees/tree-pyramidal.obj"
-source_md5="ea335fad0cc15cd95ddff696921cca38"
-
 dest_files=[ "res://.import/tree-pyramidal.obj-1543134735d12040a58162b060b0c02e.scn" ]
-dest_md5="96c8c7bdfaf413ee902171ae4b473140"
 
 [params]
 

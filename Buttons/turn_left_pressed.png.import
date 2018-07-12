@@ -7,10 +7,7 @@ path="res://.import/turn_left_pressed.png-99fb8cefa8097f02a10512a32f18f654.stex"
 [deps]
 
 source_file="res://Buttons/turn_left_pressed.png"
-source_md5="b350cbcafa71d9f50fc467e76d1486d9"
-
 dest_files=[ "res://.import/turn_left_pressed.png-99fb8cefa8097f02a10512a32f18f654.stex" ]
-dest_md5="658ebc0675cfd1401326ba623ce2bbf2"
 
 [params]
 

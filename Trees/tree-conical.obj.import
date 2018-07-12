@@ -7,10 +7,7 @@ path="res://.import/tree-conical.obj-bdd66ecc1fec22b2b7a4aaef6d24b58a.scn"
 [deps]
 
 source_file="res://Trees/tree-conical.obj"
-source_md5="863e758a7dfa0e5684f21de9b4503f7d"
-
 dest_files=[ "res://.import/tree-conical.obj-bdd66ecc1fec22b2b7a4aaef6d24b58a.scn" ]
-dest_md5="a5d87e7fc709b857f390c5a73f694e1b"
 
 [params]
 

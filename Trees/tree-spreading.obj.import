@@ -7,10 +7,7 @@ path="res://.import/tree-spreading.obj-e6e0ff3c749ba1ec7d899dd8592eb3bb.scn"
 [deps]
 
 source_file="res://Trees/tree-spreading.obj"
-source_md5="de6249d5a00674f91295dbff0cba3164"
-
 dest_files=[ "res://.import/tree-spreading.obj-e6e0ff3c749ba1ec7d899dd8592eb3bb.scn" ]
-dest_md5="c28e0b2d8365a60a6831556470de36b8"
 
 [params]
 
