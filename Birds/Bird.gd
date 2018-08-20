@@ -24,17 +24,21 @@ var Collision_is_played = false
 
 func _ready():
 	Anim.play("open_wings")
+	$Air_fade.play('fade_in')
 	set_process(true)
 	set_physics_process(true)
 	set_process_input(true)
 
 func _process(delta):
-	if Input.is_action_pressed("fly"):
+	if Input.is_action_just_pressed("fly"):
+		$Air_fade.play_backwards('fade_in')
+	elif Input.is_action_pressed("fly"):
 		Wind.set_volume_db(lerp(Wind.get_volume_db(), speed-50, 0.5))
 		if Anim.get_current_animation() != "fly":
 			if G.energy >= 1:
 				Anim.play("fly")
 	elif Input.is_action_just_released("fly"):
+		$Air_fade.play('fade_in')
 		Flap_1.stop()
 		Flap_2.stop()
 		Anim.play("open_wings")
@@ -53,6 +57,16 @@ func _process(delta):
 			Flap_2.stop()
 			if Anim.get_current_animation() != "open_wings":
 				Anim.play("open_wings")
+
+#	var height = translation.y
+#	#print(height)
+#	var albedo = $Air_center.material_override.get_albedo()
+#	#$Air_center.material_override.set_albedo(Color(0.7, 0.92, 0.95))
+#	print(albedo.a)
+#	albedo.a -= height/100000.0
+#	if albedo.a <= 0:
+#		albedo.a = 0
+#	$Air_center.material_override.set_albedo(Color(albedo.r, albedo.g, albedo.b, albedo.a))
 
 func _input(event):
 	if event.is_action_pressed("croak"):

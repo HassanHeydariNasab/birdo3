@@ -20,7 +20,7 @@ func _process(delta):
 #	)
 	Camera.set_transform(
 		Bird.transform.translated(
-			Vector3(0,1.3-Bird.speed/25,Bird.speed/8+2)
+			Vector3(0,2.5-Bird.speed/25,Bird.speed/8+2)
 		).looking_at(
 			Bird.get_translation(), Vector3(0,1,0))
 	)
