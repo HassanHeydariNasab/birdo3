@@ -38,7 +38,7 @@ func _process(delta):
 			if G.energy >= 1:
 				Anim.play("fly")
 	elif Input.is_action_just_released("fly"):
-		$Air_fade.play('fade_in')
+		$Air_fade.play('fade_in', 0.7, 0.3, false)
 		Flap_1.stop()
 		Flap_2.stop()
 		Anim.play("open_wings")

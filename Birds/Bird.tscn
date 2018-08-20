@@ -145,7 +145,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0.27451, 0.705882, 0.784314, 0 ), Color( 0.27451, 0.705882, 0.784314, 0.196078 ) ]
+"values": [ Color( 0.27451, 0.705882, 0.784314, 0 ), Color( 0.27451, 0.705882, 0.784314, 0.117647 ) ]
 }
 
 [node name="Bird" type="KinematicBody" index="0"]
