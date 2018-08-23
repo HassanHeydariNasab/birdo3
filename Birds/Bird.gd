@@ -20,6 +20,8 @@ const SPEED = 12
 var speed = 12
 const a = 0.01
 
+var is_showing_air = true
+
 var Collision_is_played = false
 
 func _ready():
@@ -31,14 +33,26 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("fly"):
-		$Air_fade.play_backwards('fade_in')
+		if is_showing_air:
+			is_showing_air = false
+			$Air_fade.play_backwards('fade_in')
+		
 	elif Input.is_action_pressed("fly"):
+		if not Flap_1.is_playing() and not Flap_2.is_playing():
+			randomize()
+			if randi() % 2:
+				Flap_1.play()
+			else:
+				Flap_2.play()
 		Wind.set_volume_db(lerp(Wind.get_volume_db(), speed-50, 0.5))
 		if Anim.get_current_animation() != "fly":
 			if G.energy >= 1:
-				Anim.play("fly")
+				Anim.play("fly", -1, 3)
+				
 	elif Input.is_action_just_released("fly"):
-		$Air_fade.play('fade_in', 0.7, 0.3, false)
+		if get_translation().y > 200:
+			is_showing_air = true
+			$Air_fade.play('fade_in', 0.7, 0.3, false)
 		Flap_1.stop()
 		Flap_2.stop()
 		Anim.play("open_wings")

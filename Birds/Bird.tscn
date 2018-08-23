@@ -129,7 +129,7 @@ mid_height = 1.0
 radial_segments = 8
 rings = 4
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 
 resource_name = "fade_in"
 length = 1.0
@@ -206,7 +206,7 @@ bus = "Master"
 [node name="Flap_1" type="AudioStreamPlayer" parent="." index="5"]
 
 stream = ExtResource( 6 )
-volume_db = -14.0
+volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
@@ -215,7 +215,7 @@ bus = "Master"
 [node name="Flap_2" type="AudioStreamPlayer" parent="." index="6"]
 
 stream = ExtResource( 7 )
-volume_db = -14.0
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
@@ -298,7 +298,7 @@ _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="Air_right" type="MeshInstance" parent="." index="12"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 8, 1.20413, 0.0883948, 5.06423 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 8, 1.20413, 0.210032, 5.0233 )
 layers = 1
 material_override = ExtResource( 11 )
 cast_shadow = 1
@@ -315,7 +315,7 @@ _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="Air_left" type="MeshInstance" parent="." index="13"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 8, -1.20413, 0.0883943, 5.06423 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 8, -1.20413, 0.210032, 5.0233 )
 layers = 1
 material_override = ExtResource( 11 )
 cast_shadow = 1
@@ -337,7 +337,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 1.0
 playback_speed = 1.0
-anims/fade_in = SubResource( 8 )
+anims/fade_in = SubResource( 6 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 

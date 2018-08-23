@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Test.gd" type="Script" id=1]
+[ext_resource path="res://test.gd" type="Script" id=1]
 [ext_resource path="res://Bullets/bullet1.obj" type="ArrayMesh" id=2]
 
 [sub_resource type="SphereMesh" id=1]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 radius = 1.0
 height = 2.0
 radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[node name="Test" type="Spatial"]
+[node name="Test" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 

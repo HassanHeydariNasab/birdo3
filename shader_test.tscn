@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="SphereMesh" id=1]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+radius = 1.0
+height = 2.0
+radial_segments = 64
+rings = 32
+is_hemisphere = false
+
+[sub_resource type="Shader" id=2]
+
+code = "shader_type spatial;
+render_mode cull_front;
+
+varying vec3 color;
+
+void vertex(){
+	color = NORMAL;
+	VERTEX.x += sin(TIME)*3.0;
+	VERTEX.y += cos(TIME)*3.0;
+	VERTEX.z += sin(TIME)*3.0;
+}
+
+void fragment(){
+	//ALBEDO = vec3(0.5,0.0,0.0);
+	
+	if (FRAGCOORD.y > 150.0){
+		//ALBEDO = FRAGCOORD.yxz;
+		ALBEDO = vec3(0.0,0.0,1.0);
+	}
+	else{
+		ALBEDO = vec3(1.0,0.0,0.0);
+	}
+}
+
+void light(){
+	//DIFFUSE_LIGHT = vec3(0.3,0.3,0.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+
+render_priority = 0
+shader = SubResource( 2 )
+
+[node name="root" type="Spatial" index="0"]
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="OmniLight" type="OmniLight" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00757, 9.47847, -3.09634 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 40.3244
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+
