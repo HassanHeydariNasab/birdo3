@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Birds/Bird.tscn" type="PackedScene" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://Buttons/turn_right_pressed.png" type="Texture" id=4]
 [ext_resource path="res://Buttons/action_pressed.png" type="Texture" id=5]
 [ext_resource path="res://Buttons/action.png" type="Texture" id=6]
-[ext_resource path="res://World/Island.tscn" type="PackedScene" id=7]
-[ext_resource path="res://World/sea.tres" type="Material" id=8]
-[ext_resource path="res://Musics/193692__xdimebagx__atmosphere-horror-1-loop.ogg" type="AudioStream" id=9]
+[ext_resource path="res://World/palace.escn" type="PackedScene" id=7]
+[ext_resource path="res://World/Island.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World/sea.tres" type="Material" id=9]
+[ext_resource path="res://Musics/193692__xdimebagx__atmosphere-horror-1-loop.ogg" type="AudioStream" id=10]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -142,7 +143,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Bird" parent="." index="2" instance=ExtResource( 2 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 108.01, 1628.68 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 108.01, 301.788 )
 
 [node name="Enemies" type="Spatial" parent="." index="3"]
 
@@ -152,6 +153,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 108.01, 1628.68 )
 
 [node name="Canvas" type="CanvasLayer" parent="." index="6"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -398,11 +400,16 @@ _sections_unfolded = [ "Directional Shadow", "Light", "Transform" ]
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Island" parent="World" index="0" instance=ExtResource( 7 )]
+[node name="Scene Root" parent="World" index="0" instance=ExtResource( 7 )]
+
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.85105, -0.175744, -4.63384 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Island" parent="World" index="1" instance=ExtResource( 8 )]
 
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.648637, 0 )
 
-[node name="Sea" type="MeshInstance" parent="World" index="1"]
+[node name="Sea" type="MeshInstance" parent="World" index="2"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 layers = 1
@@ -416,12 +423,12 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 8 )
+material/0 = ExtResource( 9 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="Fonmuziko" type="AudioStreamPlayer" parent="." index="10"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 10 )
 volume_db = -14.0
 pitch_scale = 1.0
 autoplay = true
