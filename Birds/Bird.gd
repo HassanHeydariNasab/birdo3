@@ -40,14 +40,11 @@ func _process(delta):
 	elif Input.is_action_pressed("fly"):
 		if not Flap_1.is_playing() and not Flap_2.is_playing():
 			randomize()
-			if randi() % 2:
-				Flap_1.play()
-			else:
-				Flap_2.play()
+			Flaps[randi() % 2].play(0.3)
 		Wind.set_volume_db(lerp(Wind.get_volume_db(), speed-50, 0.5))
-		if Anim.get_current_animation() != "fly":
+		if Anim.get_current_animation() != "fly2":
 			if G.energy >= 1:
-				Anim.play("fly", -1, 3)
+				Anim.play("fly2", 0.5, 2)
 				
 	elif Input.is_action_just_released("fly"):
 		if get_translation().y > 200:
