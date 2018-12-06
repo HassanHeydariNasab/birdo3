@@ -19,122 +19,40 @@ height = 1.34249
 
 [sub_resource type="ParticlesMaterial" id=2]
 
-render_priority = 0
-trail_divisor = 1
 emission_shape = 1
 emission_sphere_radius = 0.1
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = false
-spread = 45.0
 flatness = 0.5
-gravity = Vector3( 0, -9.8, 0 )
-initial_velocity = 0.0
-initial_velocity_random = 0.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 1.0
-scale_random = 0.0
-color = Color( 1, 1, 1, 1 )
 hue_variation = 0.5
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Angular Velocity", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Spread" ]
 
 [sub_resource type="SpatialMaterial" id=3]
 
-render_priority = 0
 flags_transparent = true
 flags_unshaded = true
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
 albedo_color = Color( 0.109863, 0.482368, 0.878906, 0.232039 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
 roughness = 0.0
-roughness_texture_channel = 0
 emission_enabled = true
 emission = Color( 0.0396881, 0.283799, 0.597656, 1 )
 emission_energy = 0.1
 emission_operator = 0
 emission_on_uv2 = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
-_sections_unfolded = [ "Albedo", "Emission", "Flags", "Vertex Color" ]
 
 [sub_resource type="SphereMesh" id=4]
 
 material = SubResource( 3 )
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 radius = 0.15
 height = 0.3
 radial_segments = 8
 rings = 6
-is_hemisphere = false
 
 [sub_resource type="CapsuleMesh" id=5]
 
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 radius = 0.1
-mid_height = 1.0
 radial_segments = 8
 rings = 4
 
 [sub_resource type="Animation" id=6]
 
 resource_name = "fade_in"
-length = 1.0
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Air_center:material_override:albedo_color")
 tracks/0/interp = 1
@@ -148,197 +66,75 @@ tracks/0/keys = {
 "values": [ Color( 0.27451, 0.705882, 0.784314, 0 ), Color( 0.27451, 0.705882, 0.784314, 0.117647 ) ]
 }
 
-[node name="Bird" type="KinematicBody" index="0"]
-
-input_ray_pickable = true
-input_capture_on_drag = false
+[node name="Bird" type="KinematicBody"]
 collision_layer = 2
 collision_mask = 4101
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-collision/safe_margin = 0.001
 script = ExtResource( 1 )
-_sections_unfolded = [ "Axis Lock", "Collision", "Linear", "Transform" ]
 
-[node name="Model" parent="." index="0" instance=ExtResource( 2 )]
-
+[node name="Model" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.3, 0, -9.77524e-08, 0, 0.3, 0, 9.77524e-08, 0, -0.3, 0, 0, 0 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
-
+[node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( -1.62921e-07, 0, 1, 0, 0.5, 0, -1, 0, -1.62921e-07, 0, 0.322746, -0.0156844 )
 shape = SubResource( 1 )
-disabled = false
-_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Croak_1" type="AudioStreamPlayer" parent="." index="2"]
-
+[node name="Croak_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="Croak_2" type="AudioStreamPlayer" parent="." index="3"]
-
+[node name="Croak_2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -20.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="Croak_3" type="AudioStreamPlayer" parent="." index="4"]
-
+[node name="Croak_3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="Flap_1" type="AudioStreamPlayer" parent="." index="5"]
-
+[node name="Flap_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -5.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="Flap_2" type="AudioStreamPlayer" parent="." index="6"]
-
+[node name="Flap_2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="Wind" type="AudioStreamPlayer" parent="." index="7"]
-
+[node name="Wind" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -70.0
-pitch_scale = 1.0
 autoplay = true
-mix_target = 0
-bus = "Master"
 
-[node name="Collision_1" type="AudioStreamPlayer" parent="." index="8"]
-
+[node name="Collision_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 volume_db = -10.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="Collision_2" type="AudioStreamPlayer" parent="." index="9"]
-
+[node name="Collision_2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 volume_db = -5.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="Particles" type="Particles" parent="." index="10"]
-
+[node name="Particles" type="Particles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.266825, 0.833891 )
 visible = false
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-emitting = false
-amount = 8
 lifetime = 0.05
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_aabb = AABB( -4, -4, -4, 8, 8, 8 )
 local_coords = false
-draw_order = 0
 process_material = SubResource( 2 )
-draw_passes = 1
 draw_pass_1 = SubResource( 4 )
-_sections_unfolded = [ "Draw Passes", "Drawing", "Process Material", "Time" ]
 
-[node name="Air_center" type="MeshInstance" parent="." index="11"]
-
+[node name="Air_center" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 4.13418 )
-layers = 1
 material_override = ExtResource( 11 )
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 5 )
-skeleton = NodePath("..")
 material/0 = null
-_sections_unfolded = [ "Geometry", "Transform", "material" ]
 
-[node name="Air_right" type="MeshInstance" parent="." index="12"]
-
+[node name="Air_right" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 8, 1.20413, 0.210032, 5.0233 )
-layers = 1
 material_override = ExtResource( 11 )
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 5 )
-skeleton = NodePath("..")
 material/0 = null
-_sections_unfolded = [ "Geometry", "Transform", "material" ]
 
-[node name="Air_left" type="MeshInstance" parent="." index="13"]
-
+[node name="Air_left" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 8, -1.20413, 0.210032, 5.0233 )
-layers = 1
 material_override = ExtResource( 11 )
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 5 )
-skeleton = NodePath("..")
 material/0 = null
-_sections_unfolded = [ "Geometry", "Transform", "material" ]
 
-[node name="Air_fade" type="AnimationPlayer" parent="." index="14"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
+[node name="Air_fade" type="AnimationPlayer" parent="."]
 playback_default_blend_time = 1.0
-playback_speed = 1.0
 anims/fade_in = SubResource( 6 )
-blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
-
 

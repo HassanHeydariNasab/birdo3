@@ -105,10 +105,11 @@ func _physics_process(delta):
 	var x = t.x
 	var y = t.y
 	var z = t.z
-#	if os == "Android":
-#		var akc = Input.get_accelerometer()
-#		rotate_object_local(Vector3(-1,0,0),deg2rad(-akc.y/8))
-#		rotate_object_local(Vector3(0,0,1),deg2rad(akc.y/8))
+	if os == "Android":
+		var akc = Input.get_accelerometer()
+#		print(akc)
+		rotate_object_local(Vector3(-1,0,0),deg2rad((akc.y+4)/8))
+		rotate_object_local(Vector3(0,0,1),deg2rad(-akc.x/8))
 #	print(str(x)+", "+str(y)+", "+str(z))
 #	print(str(speed)+'	'+str(y))
 	if Input.is_action_pressed("fly"):
